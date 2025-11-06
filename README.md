@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4rO4igdX)
 # Proyecto con un servidor web y un servidor de base de datos
 
 ## Ejercicios para repasar
@@ -15,7 +14,8 @@
     echo phpinfo();
     ?>
     ```
-    Copia un fichero `info.php` al directorio `/var/www/html` del contenedor con `docker cp`.
+
+Copia un fichero `info.php` al directorio `/var/www/html` del contenedor con `docker cp`.
 6. Vuelve a comprobar el espacio ocupado por el contenedor.
 7. Accede al fichero `info.php` desde un navegador web.
 
@@ -29,27 +29,30 @@
 ```html
 <h1>Hola soy XXXXXXXXXXXXXXX de IFC33X</h1>
 ```
+
 Deberás sustituir XXXXXXXXXXX por tu nombre y tus apellidos.
 
 * Colocar en ese mismo directorio raíz un archivo llamado `index.php` con el siguiente contenido:
+
 ```php
 <?php echo phpinfo(); ?>
 ```
+
 * Para crear los ficheros tienes tres alternativas:
-    * Ejecutando bash de forma interactiva en el contenedor y creando los ficheros.
-    * Ejecutando un comando `echo` en el contenedor con `docker exec`.
-    * Usando `docker cp` como hemos visto en el ejercicio 5.
+  * Ejecutando bash de forma interactiva en el contenedor y creando los ficheros.
+  * Ejecutando un comando `echo` en el contenedor con `docker exec`.
+  * Usando `docker cp` como hemos visto en el ejercicio 5.
 
 ### Servidor de base de datos
 
 * Arrancar un contenedor que se llame `bbdd` y que ejecute una instancia de la imagen mariadb para que sea accesible desde el puerto 3336.
 * Antes de arrancarlo visitar la página del contenedor en [Docker Hub](https://hub.docker.com/_/mariadb) y establecer las variables de entorno necesarias para que:
 
-    * La contraseña de root sea `root`.
-    * Crear una base de datos automáticamente al arrancar que se llame `prueba`.
-    * Crear el usuario `invitado` con las contraseña `invitado`.
+  * La contraseña de root sea `root`.
+  * Crear una base de datos automáticamente al arrancar que se llame `prueba`.
+  * Crear el usuario `invitado` con las contraseña `invitado`.
 
-# Entregables
+## Entregables
 
 Deberás entregar en este repositorio los siguientes pantallazos documentados en markdown (sin abuso de las IAs):
 
@@ -58,4 +61,3 @@ Deberás entregar en este repositorio los siguientes pantallazos documentados en
 * Pantallazo donde se vea el tamaño del contenedor `web` después de crear los dos ficheros.
 * Pantallazo donde desde un cliente de base de datos (instalado en tu ordenador) se pueda observar que hemos podido conectarnos al servidor de base de datos con el usuario creado y que se ha creado la base de datos prueba (`show databases`). El acceso se debe realizar desde el ordenador que tenéis instalado docker, no hay que acceder desde dentro del contenedor, es decir, no usar `docker exec`.
 * Pantallazo donde se comprueba que no se puede borrar la imagen `mariadb` mientras el contenedor `bbdd` está creado.
-
